@@ -1,0 +1,12 @@
+/node_modules
+/build
+/build.zip
+/.well-known
+.git
+*.md
+.gitignore
+
+
+# testing
+/coverage
+

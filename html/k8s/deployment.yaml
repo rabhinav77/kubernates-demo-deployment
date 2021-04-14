@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo-app
+  namespace: abhinav
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+        - name: demo-app
+          image: gcr.io/{project_id}/demo-app:1.0.2
+          resources:
+           requests:
+            memory: "50Mi"
+            cpu: "500m"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3001
+      restartPolicy: Always
+
